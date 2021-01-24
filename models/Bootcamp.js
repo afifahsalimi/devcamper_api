@@ -39,11 +39,9 @@ const BootcampSchema = new mongoose.Schema({
     type: {
       type: String,
       enum: ['Point'],
-      required: true,
     },
     coordinates: {
       type: [Number],
-      required: true,
       index: '2dsphere',
     },
     formattedAddress: String,
@@ -52,48 +50,48 @@ const BootcampSchema = new mongoose.Schema({
     state: String,
     zipcode: String,
     country: String,
-    careers: {
-      type: [String],
-      required: true,
-      enum: [
-        'Web Development',
-        'Mobile Development',
-        'UI/UX',
-        'Data Science',
-        'Business',
-        'Other',
-      ],
-    },
-    averageRating: {
-      type: Number,
-      min: [1, 'Rating must be at leaset 1'],
-      max: [10, 'Rating must cannot be more than 100'],
-    },
-    averageCost: Number,
-    photo: {
-      type: String,
-      default: 'no-photo.jpg',
-    },
-    housing: {
-      type: Boolean,
-      default: false,
-    },
-    jobAssistance: {
-      type: Boolean,
-      default: false,
-    },
-    jobGuarantee: {
-      type: Boolean,
-      default: false,
-    },
-    acceptGi: {
-      type: Boolean,
-      default: false,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
+  },
+  careers: {
+    type: [String],
+    required: true,
+    enum: [
+      'Web Development',
+      'Mobile Development',
+      'UI/UX',
+      'Data Science',
+      'Business',
+      'Other',
+    ],
+  },
+  averageRating: {
+    type: Number,
+    min: [1, 'Rating must be at leaset 1'],
+    max: [10, 'Rating must cannot be more than 100'],
+  },
+  averageCost: Number,
+  photo: {
+    type: String,
+    default: 'no-photo.jpg',
+  },
+  housing: {
+    type: Boolean,
+    default: false,
+  },
+  jobAssistance: {
+    type: Boolean,
+    default: false,
+  },
+  jobGuarantee: {
+    type: Boolean,
+    default: false,
+  },
+  acceptGi: {
+    type: Boolean,
+    default: false,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
